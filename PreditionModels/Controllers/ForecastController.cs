@@ -15,7 +15,7 @@ namespace PreditionModels.Controllers
             _predictService = predictService;
         }
 
-        [HttpGet("/regression-forecast")]
+        [HttpGet("/regression")]
         public IActionResult GetRegressionForecast([FromQuery] double[] inputFeatures)
         {
             if (inputFeatures == null || inputFeatures.Length != 28)
