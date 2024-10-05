@@ -50,8 +50,7 @@ To effectively support large datasets for training, it is essential to store the
 
 #### Supporting large datasets (range of tens of GBs) through APIs
 When designing the API for predictions that supports large datasets, it should implement batch processing to allow clients to send multiple data points in a single request. This optimization enhances performance and minimizes overhead by reducing the number of individual API calls.
-
-Additionally, the API should utilize pagination or chunking for data retrieval to avoid overwhelming clients with large responses. This approach enables clients to request manageable subsets of data, thereby improving usability and overall performance.
+Additionally, the API should utilize pagination or chunking for data retrieval to avoid overwhelming clients with large responses. 
 Data compression techniques should be leveraged to reduce the size of data being transferred over the network. This enhancement not only improves response times but also reduces bandwidth consumption.
 
 #### Supporting large number of API calls
