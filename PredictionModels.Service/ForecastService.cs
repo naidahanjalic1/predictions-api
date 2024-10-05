@@ -15,10 +15,8 @@ namespace PredictionModels.Service
 
         private dynamic LoadModel(string modelFile)
         {
-            // Initialize the Python runtime
-            //PythonEngine.Initialize();
 
-            using (Py.GIL()) // Acquire the Python GIL
+            using (Py.GIL())
             {
                 try
                 {
@@ -55,23 +53,17 @@ namespace PredictionModels.Service
             {
                 try
                 {
-
-                    // Import the required Python modules
                     dynamic joblib = Py.Import("joblib");
                     dynamic np = Py.Import("numpy");
                     string scalerPath = Path.Combine(Directory.GetCurrentDirectory(), "Models", "scaler.joblib");
                     dynamic scaler = joblib.load(scalerPath);
 
-                    // Load the scaler
-                    //string scalerPath = Path.Combine(Directory.GetCurrentDirectory(), "Models", "scaler.pkl");
-                    //dynamic scaler = joblib.load(scalerPath);
-
                     // Prepare input data (convert to numpy array and reshape)
-                    dynamic inputArray = np.array(inputData2).reshape(1, 10, 2); // Assuming one feature
+                    dynamic inputArray = np.array(inputData2).reshape(1, 10, 2);
 
                     // Scale the input data
                     dynamic reshapedInput = inputArray.reshape(-1, 2);
-                    dynamic scaledInput = scaler.fit_transform(reshapedInput);  // Scale to (10, 2)
+                    dynamic scaledInput = scaler.fit_transform(reshapedInput);
 
                     // Reshape back to (1, 10, 2)
                     inputArray = scaledInput.reshape(1, 10, 2);
