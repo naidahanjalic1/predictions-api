@@ -73,4 +73,6 @@ It is evident that the time-series prediction significantly outperforms the regr
 To be able to run the application, go to appsettings.json and edit variables:
   - PythonPath - your local python path
   -  PythonDll - your local pythonDLL
-Also, python 3 should be installed locally and Visual Studio that supports .NET 6 applications
+Also, python 3 should be installed locally, it should not be higher than 13.10.x and Visual Studio that supports .NET 6 applications.
+On application start, both of the models are trained and output can be seen in the console. After training completion, they are stored in Models folder in the App.
+
