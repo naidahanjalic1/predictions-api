@@ -69,5 +69,8 @@ LSTM Model for Time-Series:
 
 It is evident that the time-series prediction significantly outperforms the regression model, as indicated by the smaller error. Observing the data reveals a recurring trend associated with the timestamps, suggesting that the other input features have minimal impact on the predictions.
 
-
-
+### Running the application
+To be able to run the application, go to appsettings.json and edit variables:
+  - PythonPath - your local python path
+  -  PythonDll - your local pythonDLL
+Also, python 3 should be installed locally and Visual Studio that supports .NET 6 applications
